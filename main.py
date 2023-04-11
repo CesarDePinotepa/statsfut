@@ -6,7 +6,6 @@
 # import relevant libraries (visualization, dashboard, data manipulation)
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
 
 from datetime import datetime
 from statsbombpy import sb
@@ -50,7 +49,7 @@ def get_opponent(match_string: str, local_team: str) -> str:
     return teams[0] if teams[1] == local_team else teams[1]
 
 
-def pass_map(player: str, vs_team: str, competition: str, completos: pd.DataFrame, incompletos: pd.DataFrame) -> plt:
+def pass_map(player: str, vs_team: str, competition: str, completos: pd.DataFrame, incompletos: pd.DataFrame):
     """
 
     :param player:
@@ -95,7 +94,6 @@ def pass_map(player: str, vs_team: str, competition: str, completos: pd.DataFram
     # titulo
     ax_title = ax.set_title(f'Pases de {player} vs {vs_team} - {competition}', fontsize=30, color='black')
 
-    # plt.show()
     return fig
 
 
